@@ -27,5 +27,5 @@ update-alternatives: error: alternative /etc/X11/xinit/xinput.d/fcitx for xinput
   ```
   2. `sudo update-alternatives --install /etc/X11/xinit/xinput.d/all_ALL xinput-all_ALL /etc/X11/xinit/xinput.d/fcitx 30`
   3. 重新执行
- `sudo im-switch -s fcitx -z default`
+  `sudo im-switch -s fcitx -z default`
 5. 重启
