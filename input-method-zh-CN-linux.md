@@ -33,9 +33,7 @@ QT_IM_MODULE=XIM
 DEPENDS="fcitx"
 ```
 
-    2. 
-```sudo update-alternatives --install /etc/X11/xinit/xinput.d/all_ALL xinput-all_ALL /etc/X11/xinit/xinput.d/fcitx 30
-```
+    2. `sudo update-alternatives --install /etc/X11/xinit/xinput.d/all_ALL xinput-all_ALL /etc/X11/xinit/xinput.d/fcitx 30`
 
     3. 重新执行
 ```
