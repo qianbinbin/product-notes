@@ -19,19 +19,19 @@ update-alternatives: error: alternative /etc/X11/xinit/xinput.d/fcitx for xinput
 解决方法：
 
     1. 在 /etc/X11/xinit/xinput.d/ 下新建一个文件 en_US：
-    ```
-    sudo vim /etc/X11/xinit/xinput.d/en_US
-    ```
-    文件内容如下：
-    ```
-    XMODIFIERS="@im=fcitx"
-    XIM=fcitx
-    XIM_PROGRAM=/usr/bin/fcitx
-    XIM_ARGS=""
-    GTK_IM_MODULE=XIM
-    QT_IM_MODULE=XIM
-    DEPENDS="fcitx"
-    ```
+```
+sudo vim /etc/X11/xinit/xinput.d/en_US
+```
+文件内容如下：
+```
+XMODIFIERS="@im=fcitx"
+XIM=fcitx
+XIM_PROGRAM=/usr/bin/fcitx
+XIM_ARGS=""
+GTK_IM_MODULE=XIM
+QT_IM_MODULE=XIM
+DEPENDS="fcitx"
+```
 
     2. 
 ```
