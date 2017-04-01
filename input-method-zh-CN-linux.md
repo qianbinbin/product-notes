@@ -28,7 +28,7 @@ update-alternatives: error: alternative /etc/X11/xinit/xinput.d/fcitx for xinput
 ```
 sudo vim /etc/X11/xinit/xinput.d/en_US
 ```
-文件内容如下：
+    文件内容如下：
 ```
 XMODIFIERS="@im=fcitx"
 XIM=fcitx
