@@ -2,14 +2,15 @@
 
 1. 修改源码，并放到`packages/apps/`下
 
-  要避免生成 odex 文件，在`build_apk.mk`中配置：
-  ```
-  LOCAL_DEX_PREOPT := false
-  ```
+    要避免生成 odex 文件，在`build_apk.mk`中配置：
+    ```
+    LOCAL_DEX_PREOPT := false
+    ```
 
 2. 编译生成`PlayAutoInstallConfig.apk`和其它 apk
 
 3. 替换原 apk
+
   1. 将`PlayAutoInstallConfig.apk`重命名为`PlayAutoInstallConfigA1.apk`，并替换`vendor/longcheer/shamrock/google/unbundled_apps/PlayAutoInstallConfigA1/`下的同名文件
   2. 参考 L8150 项目，修改编译文件`vendor/longcheer/shamrock/google/unbundled_apps/PlayAutoInstallConfigA1/Android.mk`：
 
