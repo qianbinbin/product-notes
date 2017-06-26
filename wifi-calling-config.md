@@ -4,7 +4,7 @@
 
 WFC (Wi-Fi Calling) 开关默认值，配置在`packages/apps/CarrierConfig/`下，`assets/carrier_config_*.xml`，其配置会在`res/xml/vendor.xml`中被覆盖，是一个属性名为`carrier_default_wfc_ims_enabled_bool`的 bool 值：
 
-```
+```java
 /**
  * Default WFC_IMS_enabled: true VoWiFi by default is on
  *                          false VoWiFi by default is off
@@ -24,7 +24,7 @@ public static final String KEY_CARRIER_DEFAULT_WFC_IMS_ENABLED_BOOL =
 
 `WirelessSettings.java`中，Wi-Fi Calling 的显示与否与两个方法有关，如果两个方法都返回`true`，则显示这个开关，否则不显示：
 
-```
+```java
 @Override
 public void onResume() {
     super.onResume();
@@ -74,7 +74,7 @@ public static boolean isWfcEnabledByPlatform(Context context) {
 
 这个方法首先获取`persist.dbg.wfc_avail_ovr`这个属性，从命名看它可能是 debug 用的：
 
-```
+```java
 /*
  * Debug flag to override configuration flag
  */
@@ -96,7 +96,7 @@ public static final String PROPERTY_DBG_WFC_AVAIL_OVERRIDE = "persist.dbg.wfc_av
 
 如果上面属性为`true`，继续获取属性`carrier_wfc_ims_available_bool`，其未配置时默认值为`false`，从名称看可能用来表示运营商 WFC 是否可用：
 
-```
+```java
 /**
  * Flag specifying whether WFC over IMS should be available for carrier: independent of
  * carrier provisioning. If false: hard disabled. If true: then depends on carrier
@@ -115,7 +115,7 @@ GBA 是指通用引导架构，此方法是在运营商要求仅在使用 GBA SI
 
 ### ImsManager.isWfcProvisionedOnDevice()
 
-```
+```java
 /**
  * Indicates whether VoWifi is provisioned on device
  */
@@ -137,7 +137,7 @@ public static boolean isWfcProvisionedOnDevice(Context context) {
 
 #### carrier_volte_provisioning_required_bool 属性
 
-```
+```java
 /** Flag specifying whether provisioning is required for VOLTE. */
 public static final String KEY_CARRIER_VOLTE_PROVISIONING_REQUIRED_BOOL
         = "carrier_volte_provisioning_required_bool";
@@ -149,7 +149,7 @@ public static final String KEY_CARRIER_VOLTE_PROVISIONING_REQUIRED_BOOL
 
 `ImsManager#isWfcProvisioned()`方法实际获取的是如下属性：
 
-```
+```java
 // SystemProperties used as cache
 
 private static final String WFC_PROVISIONED_PROP = "net.lte.ims.wfc.provisioned";
